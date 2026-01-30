@@ -62,7 +62,7 @@ function ChannelCard({ title, subtitle, color, textColor, icon, href }) {
     <Card
       sx={{
         height: "100%",
-        borderRadius: 4,
+        borderRadius: 1,
         border: `1.5px solid ${color}`,
         backgroundColor: "#fff",
         transition: "transform 180ms ease, box-shadow 180ms ease",
@@ -145,7 +145,7 @@ export default function Contact() {
             sx={{
               mb: 4,
               p: { xs: 2, md: 2.5 },
-              borderRadius: 2,
+              borderRadius: 1,
               border: "1px solid",
               borderColor: "rgba(23,81,145,0.20)",
               bgcolor: "rgba(23,81,145,0.03)",

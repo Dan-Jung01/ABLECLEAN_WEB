@@ -70,7 +70,7 @@ function ProcessCard({ title, icon, showArrow }) {
         variant="outlined"
         sx={{
           height: "100%",
-          borderRadius: 4,
+          borderRadius: 2,
           borderColor: "divider",
           boxShadow: "0 10px 26px rgba(0,0,0,0.05)",
           transition:

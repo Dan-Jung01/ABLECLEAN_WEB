@@ -89,7 +89,7 @@ function FaqItem({ item, expanded, onToggle }) {
     <Card
       variant="outlined"
       sx={{
-        borderRadius: 3,
+        borderRadius: 1,
         overflow: "hidden",
         borderColor: expanded ? "rgba(23,81,145,0.35)" : "divider",
         boxShadow: expanded ? "0 14px 30px rgba(0,0,0,0.10)" : "none",
