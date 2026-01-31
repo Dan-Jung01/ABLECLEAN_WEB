@@ -1,4 +1,5 @@
 import React from "react";
+import useSectionViewGA from "../hook/useSectionViewGA";
 import {
   Box,
   Card,
@@ -207,6 +208,11 @@ function PriceCard({ item }) {
 }
 
 export default function Pricing() {
+  useSectionViewGA({
+      sectionId: SECTION_IDS.pricing,
+      eventName: "view_pricing_section",
+      threshold: 0.6,
+  });
   return (
     <Section id={SECTION_IDS.pricing} title={null} subtitle={null}>
       <Container maxWidth="lg">

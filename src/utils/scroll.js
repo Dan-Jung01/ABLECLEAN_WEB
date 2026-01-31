@@ -1,10 +1,14 @@
-/**
- * Smooth-scroll to a section id with a fixed header offset.
- */
-export function scrollToSectionId(sectionId, offsetPx = 84) {
-  const el = document.getElementById(sectionId);
+import ReactGA from "react-ga4";
+
+export const scrollToSectionId = (id) => {
+  const el = document.getElementById(id);
   if (!el) return;
 
-  const y = el.getBoundingClientRect().top + window.scrollY - offsetPx;
-  window.scrollTo({ top: y, behavior: "smooth" });
-}
+  el.scrollIntoView({ behavior: "smooth" });
+
+  ReactGA.event({
+    category: "Navigation",
+    action: "Scroll to section",
+    label: id,
+  });
+};

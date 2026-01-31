@@ -171,8 +171,8 @@ export default function Process() {
       </Typography>
 
       <BeforeAfterSlider
-        beforeSrc="/images/before-after/a.jpg"
-        afterSrc="/images/before-after/b.jpg"
+        beforeSrc="/images/before-after/fan-a.jpg"
+        afterSrc="/images/before-after/fan-b.jpg"
         labelBefore="BEFORE"
         labelAfter="AFTER"
         height={{ xs: 220, md: 420 }}

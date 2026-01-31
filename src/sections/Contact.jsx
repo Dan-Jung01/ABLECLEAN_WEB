@@ -1,4 +1,6 @@
 import React from "react";
+import ReactGA from "react-ga4";
+import useSectionViewGA from "../hook/useSectionViewGA";
 import {
   Box,
   Button,
@@ -14,12 +16,12 @@ import ChatIcon from "@mui/icons-material/Chat";
 import InstagramIcon from "@mui/icons-material/Instagram";
 import StorefrontIcon from "@mui/icons-material/Storefront";
 import ForumIcon from "@mui/icons-material/Forum";
-import Section from "../components/layout/Section";
-import { SECTION_IDS } from "../constants/nav";
-import SectionHeader from "../components/layout/SectionHeader";
 import PhoneInTalkIcon from "@mui/icons-material/PhoneInTalk";
 import AccessTimeIcon from "@mui/icons-material/AccessTime";
 
+import Section from "../components/layout/Section";
+import { SECTION_IDS } from "../constants/nav";
+import SectionHeader from "../components/layout/SectionHeader";
 
 // 채널별 컬러 정의
 const CHANNELS = [
@@ -30,6 +32,7 @@ const CHANNELS = [
     textColor: "#3A1D1D",
     icon: <ChatIcon sx={{ fontSize: 34 }} />,
     href: "https://pf.kakao.com/카카오채널_URL",
+    eventName: "click_kakao_channel",
   },
   {
     title: "인스타그램",
@@ -38,6 +41,7 @@ const CHANNELS = [
     textColor: "#E1306C",
     icon: <InstagramIcon sx={{ fontSize: 34 }} />,
     href: "https://instagram.com/인스타_URL",
+    eventName: "click_instagram",
   },
   {
     title: "당근",
@@ -46,6 +50,7 @@ const CHANNELS = [
     textColor: "#FF7A00",
     icon: <StorefrontIcon sx={{ fontSize: 34 }} />,
     href: "https://www.daangn.com/당근_URL",
+    eventName: "click_daangn",
   },
   {
     title: "네이버 톡톡",
@@ -54,10 +59,11 @@ const CHANNELS = [
     textColor: "#03C75A",
     icon: <ForumIcon sx={{ fontSize: 34 }} />,
     href: "https://talk.naver.com/톡톡_URL",
+    eventName: "click_naver_talk",
   },
 ];
 
-function ChannelCard({ title, subtitle, color, textColor, icon, href }) {
+function ChannelCard({ title, subtitle, color, textColor, icon, href, eventName }) {
   return (
     <Card
       sx={{
@@ -73,7 +79,17 @@ function ChannelCard({ title, subtitle, color, textColor, icon, href }) {
       }}
     >
       <CardActionArea
-        onClick={() => window.open(href, "_blank", "noopener,noreferrer")}
+        onClick={() => {
+          // ✅ GA4 전환 이벤트 기록
+          ReactGA.event({
+            category: "conversion",
+            action: eventName || "click_channel",
+            label: "contact_section",
+          });
+
+          // 새 탭으로 채널 열기
+          window.open(href, "_blank", "noopener,noreferrer");
+        }}
         sx={{ height: "100%" }}
       >
         <CardContent sx={{ p: { xs: 3, md: 3.5 } }}>
@@ -129,6 +145,11 @@ function ChannelCard({ title, subtitle, color, textColor, icon, href }) {
 }
 
 export default function Contact() {
+  useSectionViewGA({
+    sectionId: SECTION_IDS.contact,
+    eventName: "view_contact_section",
+    threshold: 0.6,
+  });
   return (
     <Section id={SECTION_IDS.contact} title={null} subtitle={null}>
       <Box sx={{ py: { xs: 7, md: 9 }, backgroundColor: "#ffffff" }}>
@@ -140,7 +161,7 @@ export default function Contact() {
             subtitle="카카오채널, 인스타그램, 당근, 네이버 톡톡 중 편한 채널로 연락 주세요."
           />
 
-          {/* ✅ 대표전화 강조 영역 (아이콘 + 즉시 연결 배지 + 상담 시간) */}
+          {/* 대표전화 강조 영역 (아이콘 + 즉시 연결 배지 + 상담 시간) */}
           <Box
             sx={{
               mb: 4,
@@ -183,9 +204,17 @@ export default function Contact() {
                 </Box>
               </Stack>
 
+              {/* ✅ 전화 클릭 전환 이벤트 */}
               <Typography
                 component="a"
                 href="tel:010-4671-0536"
+                onClick={() => {
+                  ReactGA.event({
+                    category: "conversion",
+                    action: "click_phone",
+                    label: "contact_section",
+                  });
+                }}
                 sx={{
                   fontWeight: 900,
                   fontSize: { xs: 28, md: 38 },
@@ -210,7 +239,6 @@ export default function Contact() {
               </Typography>
             </Stack>
           </Box>
-
 
           {/* 채널 카드 */}
           <Grid container spacing={3}>
