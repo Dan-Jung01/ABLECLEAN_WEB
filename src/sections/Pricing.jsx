@@ -108,55 +108,6 @@ function ImageAreaSingle({ src, alt }) {
   );
 }
 
-// ✅ 2in1: 상단 이미지를 2분할로 합성
-function ImageAreaCombo() {
-  return (
-    <Box
-      sx={{
-        height: 170,
-        bgcolor: "#f4f6f8",
-        display: "grid",
-        gridTemplateColumns: "1fr 1fr",
-        gap: 1,
-        p: 1,
-        overflow: "hidden",
-      }}
-    >
-      <Box
-        sx={{
-          borderRadius: 2,
-          overflow: "hidden",
-          bgcolor: "#fff",
-        }}
-      >
-        <Box
-          component="img"
-          src="/images/pricing/wall01.jpg"
-          alt="벽걸이"
-          draggable={false}
-          sx={{ width: "100%", height: "100%", objectFit: "contain" }}
-        />
-      </Box>
-
-      <Box
-        sx={{
-          borderRadius: 2,
-          overflow: "hidden",
-          bgcolor: "#fff",
-        }}
-      >
-        <Box
-          component="img"
-          src="/images/pricing/stand01.jpg"
-          alt="스탠드"
-          draggable={false}
-          sx={{ width: "100%", height: "100%", objectFit: "contain" }}
-        />
-      </Box>
-    </Box>
-  );
-}
-
 function PriceCard({ item }) {
   return (
     <Card

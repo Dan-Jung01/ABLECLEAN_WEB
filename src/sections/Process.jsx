@@ -152,22 +152,22 @@ export default function Process() {
         </Grid>
 
         {/* ✅ 전/후 비교 섹션은 그대로 유지 */}
-<Box sx={{ mt: 5 }}>
-  <Typography sx={{ fontWeight: 900, mb: 1 }}>
-    눈으로 확인하는 세척 전·후 차이
-  </Typography>
-  <Typography color="text.secondary" sx={{ mb: 2 }}>
-    가운데 바를 좌우로 움직여 전/후를 비교해보세요.
-  </Typography>
+      <Box sx={{ mt: 5 }}>
+      <SectionHeader
+        eyebrow="BEFORE & AFTER"
+        title="눈으로 보는 전, 후 차이"
+        subtitle="가운데 바를 좌우로 움직여 전/후를 비교해보세요."
+      />
+
 
   <Stack spacing={4}>
-    {/* 1) 열교환기 */}
+    {/* 1) 송풍팬 */}
     <Box>
-      <Typography sx={{ fontWeight: 900, mb: 0.5 }}>
-        열교환기(냉각핀) 세척 전·후
+      <Typography sx={{ fontWeight: 900, mb: 0.5, fontSize: 20 }}>
+        송풍팬 세척 전·후
       </Typography>
       <Typography color="text.secondary" sx={{ mb: 1.5 }}>
-        곰팡이·먼지로 막힌 냉각핀이 정리되면 냄새와 냉방 효율 체감이 좋아질 수 있어요.
+        악취의 원인이 되는 내부 오염을 집중 세척해 쾌적한 바람을 목표로 합니다.
       </Typography>
 
       <BeforeAfterSlider
@@ -179,13 +179,13 @@ export default function Process() {
       />
     </Box>
 
-    {/* 2) 송풍팬 */}
+    {/* 2) 드레인판 */}
     <Box>
-      <Typography sx={{ fontWeight: 900, mb: 0.5 }}>
-        송풍팬 세척 전·후
+      <Typography sx={{ fontWeight: 900, mb: 0.5, fontSize: 20 }}>
+        드레인판 세척 전·후
       </Typography>
       <Typography color="text.secondary" sx={{ mb: 1.5 }}>
-        악취의 원인이 되는 내부 오염을 집중 세척해 쾌적한 바람을 목표로 합니다.
+        곰팡이·먼지로 쌓인 드레인판이 정리되면 곰팡이와 냄새는 줄고 누수 현상도 감소합니다.
       </Typography>
 
       <BeforeAfterSlider
@@ -199,8 +199,8 @@ export default function Process() {
 
     {/* 3) 필터/외관 */}
     <Box>
-      <Typography sx={{ fontWeight: 900, mb: 0.5 }}>
-        필터·외관 세척 전·후
+      <Typography sx={{ fontWeight: 900, mb: 0.5, fontSize: 20 }}>
+        에어컨·외관 세척 전·후
       </Typography>
       <Typography color="text.secondary" sx={{ mb: 1.5 }}>
         눈에 보이는 먼지와 오염을 정리하고, 마무리 후 작동 상태까지 확인합니다.
