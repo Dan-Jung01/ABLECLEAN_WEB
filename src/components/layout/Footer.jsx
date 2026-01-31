@@ -40,17 +40,17 @@ const CHANNELS = [
   {
     label: "카카오 채널",
     icon: <ChatIcon />,
-    href: "https://pf.kakao.com/카카오채널_URL",
+    href: "http://pf.kakao.com/_YjxfhX",
   },
   {
     label: "인스타그램",
     icon: <InstagramIcon />,
-    href: "https://instagram.com/인스타_URL",
+    href: "https://www.instagram.com/ableclean.official?igsh=MWdvNTM0bjEwZzExdw==",
   },
   {
     label: "당근",
     icon: <StorefrontIcon />,
-    href: "https://www.daangn.com/당근_URL",
+    href: "https://www.daangn.com/kr/local-profile/v5zjosz11945/",
   },
   {
     label: "네이버 톡톡",
