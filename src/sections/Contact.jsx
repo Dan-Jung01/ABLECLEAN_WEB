@@ -31,7 +31,7 @@ const CHANNELS = [
     color: "#FEE500",
     textColor: "#3A1D1D",
     icon: <ChatIcon sx={{ fontSize: 34 }} />,
-    href: "https://pf.kakao.com/카카오채널_URL",
+    href: "http://pf.kakao.com/_YjxfhX",
     eventName: "click_kakao_channel",
   },
   {
@@ -40,7 +40,7 @@ const CHANNELS = [
     color: "#E1306C",
     textColor: "#E1306C",
     icon: <InstagramIcon sx={{ fontSize: 34 }} />,
-    href: "https://instagram.com/인스타_URL",
+    href: "https://www.instagram.com/ableclean.official?igsh=MWdvNTM0bjEwZzExdw==",
     eventName: "click_instagram",
   },
   {
@@ -49,7 +49,7 @@ const CHANNELS = [
     color: "#FF7A00",
     textColor: "#FF7A00",
     icon: <StorefrontIcon sx={{ fontSize: 34 }} />,
-    href: "https://www.daangn.com/당근_URL",
+    href: "https://www.daangn.com/kr/local-profile/v5zjosz11945/",
     eventName: "click_daangn",
   },
   {
