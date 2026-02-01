@@ -58,7 +58,7 @@ const CHANNELS = [
     color: "#03C75A",
     textColor: "#03C75A",
     icon: <ForumIcon sx={{ fontSize: 34 }} />,
-    href: "https://talk.naver.com/톡톡_URL",
+    href: "https://talk.naver.com/ct/w1y8wto?frm=mnmb&frm=nmb_detail#nafullscreen",
     eventName: "click_naver_talk",
   },
 ];

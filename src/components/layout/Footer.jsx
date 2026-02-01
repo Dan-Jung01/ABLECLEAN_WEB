@@ -55,7 +55,7 @@ const CHANNELS = [
   {
     label: "네이버 톡톡",
     icon: <ForumIcon />,
-    href: "https://talk.naver.com/톡톡_URL",
+    href: "https://talk.naver.com/ct/w1y8wto?frm=mnmb&frm=nmb_detail#nafullscreen",
   },
 ];
 
